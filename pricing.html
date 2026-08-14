@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ToolRent | Pricing Packages</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<style>
+        /* Section 1: Hero */
+        .pricing-hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            background: linear-gradient(rgba(0,18,32,0.9), rgba(0,18,32,0.9)), url('https://images.pexels.com/photos/7186211/pexels-photo-7186211.jpeg') center/cover fixed;
+        }
+
+        /* Sections 2-4: Pricing Cards */
+        .pricing-container {
+            margin-top: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: 30px;
+            padding: 50px 40px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.4s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card:hover {
+            transform: translateY(-15px);
+        }
+        .pricing-card.highlight {
+            background: linear-gradient(135deg, var(--color-primary), #003366);
+            border-color: var(--color-secondary);
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 173, 181, 0.2);
+        }
+        .pricing-card.highlight:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        @media (max-width: 991px) {
+            .pricing-card.highlight { transform: none; }
+            .pricing-card.highlight:hover { transform: translateY(-10px); }
+        }
+        
+        .price-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-color);
+            margin: 20px 0;
+        }
+        .highlight .price-text { color: #fff; }
+        .highlight .text-muted { color: rgba(255,255,255,0.7) !important; }
+        .highlight h3 { color: #fff; }
+        .highlight .feature-list { color: #fff; }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .feature-list i {
+            color: var(--color-secondary);
+            font-size: 1.2rem;
+        }
+        .highlight .feature-list i { color: #00ADB5; }
+
+        /* Section 5: FAQ Accordion */
+        .accordion-button { background-color: var(--card-bg); color: var(--text-color) !important; }
+        .accordion-button:not(.collapsed) { background-color: rgba(0, 173, 181, 0.1) !important; color: var(--color-secondary) !important; box-shadow: none; }
+        .accordion-button:focus { box-shadow: none; }
+        [data-theme="dark"] .accordion-button::after { filter: brightness(0) invert(1); }
+        .accordion-item { border: 1px solid var(--border-color); background-color: var(--card-bg); }
+        .accordion-body { color: var(--text-color); opacity: 0.8; background-color: transparent; }
+    </style>
+</head>
+<body>
+<header class="header">
+<div class="container d-flex align-items-center justify-content-between">
+<a class="logo text-decoration-none" href="index.html">
+<h3 class="m-0 fw-bold d-flex align-items-center gap-2">
+<i class="bi bi-tools text-secondary-custom"></i>
+<span>ToolRent.</span>
+</h3>
+</a>
+<nav class="header-nav">
+<a class="nav-link" href="index.html">Home 1</a>
+<a class="nav-link" href="home-2.html">Home 2</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="services.html">Services</a>
+<a class="nav-link" href="gallery.html">Gallery</a>
+<a class="nav-link active" href="pricing.html">Pricing</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</nav>
+<div class="controls">
+                <button class="theme-btn header-controls-btn theme-toggle" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
+                <button class="rtl-btn header-controls-btn rtl-toggle" id="rtl-toggle"><i class="bi bi-arrow-left-right"></i></button>
+<a class="btn-primary-custom rounded-pill px-4 py-2 text-decoration-none fw-bold text-white header-auth-btn" href="signup.html">Sign Up</a>
+<button class="btn btn-outline-secondary mobile-toggle-btn ms-2" data-bs-target="#mobileMenu" data-bs-toggle="offcanvas" style="display: none;" type="button"><i class="bi bi-list fs-3"></i></button></div>
+</div>
+</header>
+<div class="offcanvas offcanvas-end" id="mobileMenu" style="background-color: var(--bg-color);" tabindex="-1">
+<div class="offcanvas-header border-bottom border-secondary">
+<h5 class="offcanvas-title fw-bold"><i class="bi bi-tools text-secondary-custom"></i> ToolRent.</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" style="filter: invert(var(--bs-body-color-rgb));" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<div class="d-flex flex-column gap-3 fs-5">
+<a class="text-decoration-none" href="index.html" style="color: var(--text-color)">Home 1</a>
+<a class="text-decoration-none" href="home-2.html" style="color: var(--text-color)">Home 2</a>
+<a class="text-decoration-none" href="about.html" style="color: var(--text-color)">About</a>
+<a class="text-decoration-none" href="services.html" style="color: var(--text-color)">Services</a>
+<a class="text-decoration-none" href="gallery.html" style="color: var(--text-color)">Gallery</a>
+<a class="text-decoration-none" href="pricing.html" style="color: var(--text-color)">Pricing</a>
+<a class="text-decoration-none" href="contact.html" style="color: var(--text-color)">Contact</a>
+<a class="btn-primary-custom text-center mt-4" href="login.html">Login</a>
+                <div class="mobile-toggles mt-auto pt-4 border-top border-secondary d-flex justify-content-center gap-3">
+                    <button class="theme-btn theme-toggle btn btn-outline-secondary rounded-circle" style="width: 50px; height: 50px;"><i class="bi bi-sun-fill"></i></button>
+                    <button class="rtl-btn rtl-toggle btn btn-outline-secondary rounded-circle" style="width: 50px; height: 50px;"><i class="bi bi-arrow-left-right"></i></button>
+                </div>
+</div>
+</div>
+</div>
+
+<!-- Section 1: Hero -->
+<section class="pricing-hero reveal-fade-up">
+<div class="container">
+<h1 class="display-3 fw-bold text-white mb-3">Setup &amp; Maintenance <span class="text-secondary-custom">Packages</span></h1>
+<p class="lead text-white opacity-75 max-w-600 mx-auto">Transparent pricing for premium white-glove tool fleet installation and monthly maintenance services.</p>
+</div>
+</section>
+<!-- Sections 2-4: Pricing Cards Grid -->
+<section class="pb-5 mb-5">
+<div class="container pricing-container">
+<div class="row g-4 align-items-center">
+<!-- Section 2: Beginner -->
+<div class="col-lg-4 reveal-fade-right">
+<div class="pricing-card">
+<h3 class="fw-bold">DIY Standard Rental</h3>
+<p class="text-muted small">Essential Tools & Safety Gear</p>
+<div class="price-text">$49<span class="fs-5 text-muted fw-normal">/day</span></div>
+<p class="text-muted">Ideal for home improvement projects, painting, and basic drilling. Get access to standard power tools.</p>
+<ul class="feature-list">
+<li><i class="bi bi-check-circle-fill"></i> 24-hour daily rental period</li>
+<li><i class="bi bi-check-circle-fill"></i> Standard drill bits included</li>
+<li><i class="bi bi-check-circle-fill"></i> Basic extension cord included</li>
+<li><i class="bi bi-check-circle-fill"></i> Safety goggles & gloves included</li>
+<li class="opacity-50"><i class="bi bi-x-circle"></i> Standard user guides</li>
+</ul>
+<a class="btn btn-outline-secondary w-100 rounded-pill py-3 fw-bold" href="contact.html" style="color: var(--text-color); border-color: var(--border-color);">Select Package</a>
+</div>
+</div>
+<!-- Section 3: Enthusiast (Highlighted) -->
+<div class="col-lg-4 reveal-zoom-in">
+<div class="pricing-card highlight">
+<span class="badge bg-secondary position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2">Most Popular</span>
+<h3 class="fw-bold">Contractor Pro Rental</h3>
+<p class="text-muted small">Heavy Equipment & Scaffolding</p>
+<div class="price-text">$149<span class="fs-5 text-muted fw-normal">/day</span></div>
+<p class="text-muted">Ideal for professional contractors and builders. Includes heavy-duty scaffolding and generators.</p>
+<ul class="feature-list">
+<li><i class="bi bi-check-circle-fill"></i> 24-hour daily rental period</li>
+<li><i class="bi bi-check-circle-fill"></i> Heavy-duty generators included</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Professional tool maintenance &amp; cleaning</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Accessory &amp; extension sets included</li>
+                            <li><i class="bi bi-check-circle-fill"></i> On-site safety briefing</li>
+                        </ul>
+                        <a class="btn-accent-custom w-100 py-3 text-center d-block" href="contact.html">Select Package</a>
+                    </div>
+                </div>
+                <!-- Section 4: Professional -->
+                <div class="col-lg-4 reveal-fade-left">
+                    <div class="pricing-card">
+                        <h3 class="fw-bold">Enterprise Industrial Rental</h3>
+                        <p class="text-muted small">Full Jobsite Equipment Package</p>
+                        <div class="price-text">$399<span class="fs-5 text-muted fw-normal">/day</span></div>
+                        <p class="text-muted">Complete fleet solution for commercial construction sites. Includes heavy demolition, large scaffolding, and 24/7 service.</p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle-fill"></i> Multi-day discounts available</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 10kW silent generators</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Heavy demolition breakers</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Operator &amp; safety briefings</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 24/7 technical support response</li>
+</ul>
+<a class="btn btn-outline-secondary w-100 rounded-pill py-3 fw-bold" href="contact.html" style="color: var(--text-color); border-color: var(--border-color);">Select Package</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Add-on Services -->
+<section class="py-5 bg-opacity-10" style="background-color: rgba(0, 173, 181, 0.05);">
+<div class="container py-5 text-center">
+<h2 class="display-6 fw-bold mb-5 reveal-fade-up">A la Carte <span class="text-accent-custom">Rates</span></h2>
+<div class="row g-4 justify-content-center reveal-zoom-in">
+<div class="col-lg-3 col-md-6">
+<div class="p-4 bg-dark rounded-4 h-100 border border-secondary border-opacity-25 transition-transform hover-scale" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-10px)'" style="transition: transform 0.3s;">
+<i class="bi bi-tools display-4 text-secondary-custom mb-3"></i>
+<h4 class="fw-bold text-white">Scaffolding Setup</h4>
+<p class="text-white opacity-75 small">Our specialists will deliver, erect, and safety-certify scaffolding towers on site.</p>
+<h5 class="text-white fw-bold mb-0">From $99/setup</h5>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="p-4 bg-dark rounded-4 h-100 border border-secondary border-opacity-25 transition-transform hover-scale" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-10px)'" style="transition: transform 0.3s;">
+<i class="bi bi-shield-plus display-4 text-secondary-custom mb-3"></i>
+<h4 class="fw-bold text-white">Jobsite Delivery</h4>
+<p class="text-white opacity-75 small">Prompt delivery of heavy machinery, concrete mixers, and scaffolding to your site.</p>
+<h5 class="text-white fw-bold mb-0">From $49/trip</h5>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="p-4 bg-dark rounded-4 h-100 border border-secondary border-opacity-25 transition-transform hover-scale" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-10px)'" style="transition: transform 0.3s;">
+<i class="bi bi-info-circle display-4 text-secondary-custom mb-3"></i>
+<h4 class="fw-bold text-white">Equipment Demo</h4>
+<p class="text-white opacity-75 small">On-site safety demonstration and user instruction for all rented heavy machinery.</p>
+<h5 class="text-white fw-bold mb-0">Free with rental</h5>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="p-4 bg-dark rounded-4 h-100 border border-secondary border-opacity-25 transition-transform hover-scale" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-10px)'" style="transition: transform 0.3s;">
+<i class="bi bi-person-gear display-4 text-secondary-custom mb-3"></i>
+<h4 class="fw-bold text-white">Operator Assistance</h4>
+<p class="text-white opacity-75 small">Hire an experienced operator to assist with heavy drilling or concrete mixing.</p>
+<h5 class="text-white fw-bold mb-0">$75/hour</h5>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Detailed Feature Comparison -->
+<section class="py-5">
+<div class="container py-5">
+<h2 class="display-6 fw-bold text-center mb-5 reveal-fade-up">Compare <span class="text-secondary-custom">Rental Benefits</span></h2>
+<div class="table-responsive reveal-fade-up" style="transition-delay: 0.2s;">
+<table class="table table-hover table-bordered align-middle text-center mb-0" style="border-color: var(--border-color); color: var(--text-color); --bs-table-bg: transparent; --bs-table-color: var(--text-color); --bs-table-hover-color: var(--text-color);">
+<thead>
+<tr>
+<th class="bg-transparent border-0 w-25" scope="col"></th>
+<th class="py-4" scope="col"><h4 class="fw-bold mb-0">Beginner</h4><span class="text-muted small">DIY Standard</span></th>
+<th class="py-4" scope="col" style="background-color: rgba(0, 173, 181, 0.1);"><h4 class="fw-bold mb-0 text-secondary-custom">Enthusiast</h4><span class="text-muted small">Contractor Pro</span></th>
+<th class="py-4" scope="col"><h4 class="fw-bold mb-0">Pro</h4><span class="text-muted small">Enterprise</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-start fw-bold py-3">Rental Duration</td>
+<td class="py-3">Daily / Weekly</td>
+<td class="py-3" style="background-color: rgba(0, 173, 181, 0.05);">Flexible</td>
+<td class="py-3">Custom Plans</td>
+</tr>
+<tr>
+<td class="text-start fw-bold py-3">Site Delivery</td>
+<td class="py-3">10% Discount</td>
+<td class="py-3" style="background-color: rgba(0, 173, 181, 0.05);">20% Discount</td>
+<td class="py-3">Free Site Delivery</td>
+</tr>
+<tr>
+<td class="text-start fw-bold py-3">Safety Goggles & Gear</td>
+<td class="py-3"><i class="bi bi-check-lg text-success fs-5"></i></td>
+<td class="py-3" style="background-color: rgba(0, 173, 181, 0.05);"><i class="bi bi-check-lg text-success fs-5"></i></td>
+<td class="py-3"><i class="bi bi-check-lg text-success fs-5"></i></td>
+</tr>
+<tr>
+<td class="text-start fw-bold py-3">Pre-Rental Inspection</td>
+<td class="py-3"><i class="bi bi-check-lg text-success fs-5"></i></td>
+<td class="py-3" style="background-color: rgba(0, 173, 181, 0.05);"><i class="bi bi-check-lg text-success fs-5"></i></td>
+<td class="py-3"><i class="bi bi-check-lg text-success fs-5"></i></td>
+</tr>
+<tr>
+                            <td class="text-start fw-bold py-3">Load Certification &amp; Tagging</td>
+<td class="py-3"><i class="bi bi-x-lg text-danger opacity-50 fs-5"></i></td>
+<td class="py-3" style="background-color: rgba(0, 173, 181, 0.05);"><i class="bi bi-check-lg text-success fs-5"></i></td>
+<td class="py-3"><i class="bi bi-check-lg text-success fs-5"></i></td>
+</tr>
+<tr>
+<td class="text-start fw-bold py-3">Accessory Drill Bits</td>
+<td class="py-3"><i class="bi bi-x-lg text-danger opacity-50 fs-5"></i></td>
+<td class="py-3" style="background-color: rgba(0, 173, 181, 0.05);"><i class="bi bi-check-lg text-success fs-5"></i></td>
+<td class="py-3"><i class="bi bi-check-lg text-success fs-5"></i></td>
+</tr>
+<tr>
+<td class="text-start fw-bold py-3">10kW silent generators</td>
+<td class="py-3"><i class="bi bi-x-lg text-danger opacity-50 fs-5"></i></td>
+<td class="py-3" style="background-color: rgba(0, 173, 181, 0.05);"><i class="bi bi-x-lg text-danger opacity-50 fs-5"></i></td>
+<td class="py-3"><i class="bi bi-check-lg text-success fs-5"></i></td>
+</tr>
+<tr>
+<td class="text-start fw-bold py-3 border-bottom-0">24/7 Technical Support</td>
+<td class="py-3 border-bottom-0"><i class="bi bi-x-lg text-danger opacity-50 fs-5"></i></td>
+<td class="py-3 border-bottom-0" style="background-color: rgba(0, 173, 181, 0.05);"><i class="bi bi-x-lg text-danger opacity-50 fs-5"></i></td>
+<td class="py-3 border-bottom-0"><i class="bi bi-check-lg text-success fs-5"></i></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Section 5: FAQ -->
+<section class="py-5">
+<div class="container py-5">
+<h2 class="display-6 fw-bold text-center mb-5 reveal-fade-up">Rental &amp; Deposit <span class="text-secondary-custom">FAQ</span></h2>
+<div class="accordion reveal-fade-up" id="pricingFaqAccordion" style="transition-delay: 0.2s; max-width: 800px; margin: 0 auto;">
+<div class="accordion-item mb-3 rounded-4 overflow-hidden border">
+<h2 class="accordion-header" id="faqHeading1">
+<button aria-controls="faqCollapse1" aria-expanded="true" class="accordion-button fw-bold fs-5" data-bs-target="#faqCollapse1" data-bs-toggle="collapse" type="button">
+<i class="bi bi-question-circle text-accent-custom me-3"></i> Is safety gear included in the rental?
+                        </button>
+</h2>
+<div aria-labelledby="faqHeading1" class="accordion-collapse collapse show" data-bs-parent="#pricingFaqAccordion" id="faqCollapse1">
+<div class="accordion-body border-top border-secondary border-opacity-25">
+                            Yes, all of our tool rentals include standard safety gear (goggles, gloves, and ear protection) at no extra charge.
+                        </div>
+</div>
+</div>
+<div class="accordion-item mb-3 rounded-4 overflow-hidden border">
+<h2 class="accordion-header" id="faqHeading2">
+<button aria-controls="faqCollapse2" aria-expanded="false" class="accordion-button collapsed fw-bold fs-5" data-bs-target="#faqCollapse2" data-bs-toggle="collapse" type="button">
+<i class="bi bi-question-circle text-accent-custom me-3"></i> How is scaffolding assembly priced?
+                        </button>
+</h2>
+<div aria-labelledby="faqHeading2" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion" id="faqCollapse2">
+<div class="accordion-body border-top border-secondary border-opacity-25">
+                            Scaffolding assembly and setup are priced based on the height of the tower and the site location. Contact us for a detailed quote.
+                        </div>
+</div>
+</div>
+<div class="accordion-item mb-3 rounded-4 overflow-hidden border">
+<h2 class="accordion-header" id="faqHeading3">
+<button aria-controls="faqCollapse3" aria-expanded="false" class="accordion-button collapsed fw-bold fs-5" data-bs-target="#faqCollapse3" data-bs-toggle="collapse" type="button">
+<i class="bi bi-question-circle text-accent-custom me-3"></i> Do you offer commercial rental accounts?
+                        </button>
+</h2>
+<div aria-labelledby="faqHeading3" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion" id="faqCollapse3">
+<div class="accordion-body border-top border-secondary border-opacity-25">
+                            Yes, we offer specialized commercial accounts for construction firms, providing priority delivery and volume discounts.
+                        </div>
+</div>
+</div>
+<div class="accordion-item mb-3 rounded-4 overflow-hidden border">
+<h2 class="accordion-header" id="faqHeading4">
+<button aria-controls="faqCollapse4" aria-expanded="false" class="accordion-button collapsed fw-bold fs-5" data-bs-target="#faqCollapse4" data-bs-toggle="collapse" type="button">
+<i class="bi bi-question-circle text-accent-custom me-3"></i> What if a rented tool breaks?
+                        </button>
+</h2>
+<div aria-labelledby="faqHeading4" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion" id="faqCollapse4">
+<div class="accordion-body border-top border-secondary border-opacity-25">
+                            We inspect all equipment before delivery. If a tool breaks down due to normal wear, we will replace it immediately at no cost.
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="row gy-5">
+<div class="col-lg-4 pe-lg-5">
+<h3 class="fw-bold text-white mb-4"><i class="bi bi-tools text-secondary-custom"></i> ToolRent.</h3>
+<p class="opacity-75 mb-4">Your local choice for reliable, commercial-grade hardware and equipment rentals. We support your projects, large or small.</p>
+<div class="d-flex gap-3">
+<a class="fs-4" href="#"><i class="bi bi-instagram"></i></a>
+<a class="fs-4" href="#"><i class="bi bi-facebook"></i></a>
+<a class="fs-4" href="#"><i class="bi bi-youtube"></i></a>
+</div>
+</div>
+<div class="col-lg-2 col-md-4">
+<h5 class="text-white fw-bold mb-4">Quick Links</h5>
+<ul class="list-unstyled d-flex flex-column gap-2">
+<li><a class="text-decoration-none" href="about.html">Our Story</a></li>
+<li><a class="text-decoration-none" href="services.html">Services</a></li>
+<li><a class="text-decoration-none" href="gallery.html">Gallery</a></li>
+<li><a class="text-decoration-none" href="pricing.html">Pricing</a></li>
+<li><a class="text-decoration-none" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="col-lg-2 col-md-4">
+<h5 class="text-white fw-bold mb-4">Resources</h5>
+<ul class="list-unstyled d-flex flex-column gap-2">
+<li><a class="text-decoration-none" href="#">Operating Guides</a></li>
+<li><a class="text-decoration-none" href="#">Accessories</a></li>
+<li><a class="text-decoration-none" href="#">Delivery & Setup</a></li>
+<li><a class="text-decoration-none" href="#">Returns</a></li>
+<li><a class="text-decoration-none" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-4">
+<h5 class="text-white fw-bold mb-4">Contact Info</h5>
+<ul class="list-unstyled d-flex flex-column gap-3 opacity-75">
+<li><i class="bi bi-geo-alt me-2 text-secondary-custom"></i> 456 Industrial Blvd, Metro City, MC 90210</li>
+<li><i class="bi bi-telephone me-2 text-secondary-custom"></i> +1 (555) 123-4567</li>
+<li><i class="bi bi-envelope me-2 text-secondary-custom"></i> support@toolrent.com</li>
+</ul>
+</div>
+</div>
+<hr class="mt-5 mb-4 border-secondary opacity-25"/>
+<div class="row align-items-center">
+<div class="col-md-6 text-center text-md-start">
+<p class="mb-0 opacity-75 small">© 2026 ToolRent Local Hardware Rental Service. All rights reserved.</p>
+</div>
+<div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+<button class="btn btn-sm btn-outline-secondary rounded-circle" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"><i class="bi bi-arrow-up"></i></button>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

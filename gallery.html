@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ToolRent | Visual Gallery</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+        /* Section 1: Hero */
+        .gallery-hero {
+            height: 40vh;
+            background: linear-gradient(rgba(0, 18, 32, 0.6), rgba(0, 18, 32, 1)), url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        /* Gallery Headers */
+        .gallery-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .gallery-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--color-secondary);
+            border-radius: 2px;
+        }
+
+        /* Section 2: Tropical tools (CSS Grid variations) */
+        .grid-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 300px;
+            gap: 20px;
+        }
+
+        .grid-tools img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: filter 0.4s, transform 0.4s;
+        }
+
+        .grid-tools img:hover {
+            transform: scale(1.05);
+            z-index: 2;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .tools-tall {
+            grid-row: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .grid-tools {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Section 3: tool Gallery (Hexagon Layout simulation via clip-path) */
+        .hex-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .hex-item {
+            width: 280px;
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.4s, box-shadow 0.4s;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .hex-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .hex-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section 4: Setup Gallery (Slider overlay) */
+        .setup-card {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .setup-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .setup-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .setup-card:hover .setup-overlay {
+            opacity: 1;
+        }
+
+        /* Section 5: Equipment */
+        .equip-img {
+            border-radius: 20px;
+            border: 2px dashed var(--border-color);
+            padding: 10px;
+            transition: border-color 0.4s;
+        }
+
+        .equip-img:hover {
+            border-color: var(--color-accent);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a class="logo text-decoration-none" href="index.html">
+                <h3 class="m-0 fw-bold d-flex align-items-center gap-2">
+                    <i class="bi bi-tools text-secondary-custom"></i>
+                    <span>ToolRent.</span>
+                </h3>
+            </a>
+            <nav class="header-nav">
+                <a class="nav-link" href="index.html">Home 1</a>
+                <a class="nav-link" href="home-2.html">Home 2</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="services.html">Services</a>
+                <a class="nav-link active" href="gallery.html">Gallery</a>
+                <a class="nav-link" href="pricing.html">Pricing</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </nav>
+            <div class="controls">
+                <button class="theme-btn" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
+                <button class="rtl-btn" id="rtl-toggle"><i class="bi bi-arrow-left-right"></i></button>
+                <a class="btn-primary-custom rounded-pill px-4 py-2 text-decoration-none fw-bold text-white header-auth-btn"
+                    href="signup.html">Sign Up</a>
+                <button class="btn btn-outline-secondary mobile-toggle-btn ms-2" data-bs-target="#mobileMenu"
+                    data-bs-toggle="offcanvas" style="display: none;" type="button"><i
+                        class="bi bi-list fs-3"></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="offcanvas offcanvas-end" id="mobileMenu" style="background-color: var(--bg-color);" tabindex="-1">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title fw-bold"><i class="bi bi-tools text-secondary-custom"></i> ToolRent.</h5>
+            <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas"
+                style="filter: invert(var(--bs-body-color-rgb));" type="button"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column gap-3 fs-5">
+                <a class="text-decoration-none" href="index.html" style="color: var(--text-color)">Home 1</a>
+                <a class="text-decoration-none" href="home-2.html" style="color: var(--text-color)">Home 2</a>
+                <a class="text-decoration-none" href="about.html" style="color: var(--text-color)">About</a>
+                <a href="services.html" class="text-decoration-none" style="color: var(--text-color)">Services</a>
+                <a href="gallery.html" class="text-decoration-none" style="color: var(--text-color)">Gallery</a>
+                <a class="text-decoration-none" href="pricing.html" style="color: var(--text-color)">Pricing</a>
+                <a class="text-decoration-none" href="contact.html" style="color: var(--text-color)">Contact</a>
+                <a class="btn-primary-custom text-center mt-4" href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1: Hero -->
+    <section class="gallery-hero reveal-fade-up">
+        <div class="container">
+            <h1 class="display-3 fw-bold text-white mb-3">Visual <span class="text-secondary-custom">Showcase</span>
+            </h1>
+            <p class="lead text-white opacity-75">Browse our collection of stunning equipment and custom installations.
+            </p>
+        </div>
+    </section>
+    <!-- Section 2: Tropical tools Gallery -->
+    <section class="py-5 my-4">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="display-6 fw-bold gallery-title reveal-fade-right">Power & Hand Tools</h2>
+            </div>
+            <div class="grid-tools reveal-fade-up">
+                <img alt="tools" src="https://images.pexels.com/photos/2091374/pexels-photo-2091374.jpeg" />
+                <img alt="tools" src="https://images.pexels.com/photos/7186211/pexels-photo-7186211.jpeg" />
+                <img alt="tools" src="https://images.pexels.com/photos/8005391/pexels-photo-8005391.jpeg" />
+                <img alt="tools" src="https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg" />
+            </div>
+        </div>
+    </section>
+    <!-- Section 3: tool Gallery -->
+    <section class="py-5 bg-opacity-10" style="background-color: var(--color-primary);">
+        <div class="container py-4 text-center">
+            <h2 class="display-6 fw-bold text-white gallery-title reveal-fade-left">Scaffoldings & Ladders</h2>
+            <div class="hex-gallery reveal-zoom-in">
+                <div class="hex-item"><img alt="tool" src="https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg" /></div>
+                <div class="hex-item"><img alt="tool" src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" /></div>
+                <div class="hex-item"><img alt="tool" src="https://images.pexels.com/photos/1590067/pexels-photo-1590067.jpeg" /></div>
+                <div class="hex-item"><img alt="tool" src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" /></div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 4: tool fleet Setup Gallery -->
+    <section class="py-5 my-4">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="display-6 fw-bold gallery-title reveal-fade-up">Generators & Heavy Gear</h2>
+            </div>
+            <div class="row g-4 reveal-fade-up">
+                <div class="col-md-6">
+                    <div class="setup-card">
+                        <img alt="Install" src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" />
+                        <div class="setup-overlay">
+                            <h4 class="text-white mb-0 fw-bold">Jobsite Inverter Generator Setup</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="setup-card">
+                        <img alt="Install" src="https://images.pexels.com/photos/1750212/pexels-photo-1750212.jpeg" />
+                        <div class="setup-overlay">
+                            <h4 class="text-white mb-0 fw-bold">Mobile Scaffolding Tower Setup</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-4 pe-lg-5">
+                    <h3 class="fw-bold text-white mb-4"><i class="bi bi-tools text-secondary-custom"></i> ToolRent.</h3>
+                    <p class="opacity-75 mb-4">Your local choice for reliable, commercial-grade hardware and equipment rentals. We support your projects, large or small.</p>
+                    <div class="d-flex gap-3">
+                        <a class="fs-4" href="#"><i class="bi bi-instagram"></i></a>
+                        <a class="fs-4" href="#"><i class="bi bi-facebook"></i></a>
+                        <a class="fs-4" href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a class="text-decoration-none" href="about.html">Our Story</a></li>
+                        <li><a class="text-decoration-none" href="services.html">Services</a></li>
+                        <li><a class="text-decoration-none" href="gallery.html">Gallery</a></li>
+                        <li><a class="text-decoration-none" href="pricing.html">Pricing</a></li>
+                        <li><a class="text-decoration-none" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Resources</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a class="text-decoration-none" href="#">Operating Guides</a></li>
+                        <li><a class="text-decoration-none" href="#">Accessories</a></li>
+                        <li><a class="text-decoration-none" href="#">Delivery & Setup</a></li>
+                        <li><a class="text-decoration-none" href="#">Returns</a></li>
+                        <li><a class="text-decoration-none" href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white fw-bold mb-4">Contact Info</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3 opacity-75">
+                        <li><i class="bi bi-geo-alt me-2 text-secondary-custom"></i> 456 Industrial Blvd, Metro City, MC 90210
+                        </li>
+                        <li><i class="bi bi-telephone me-2 text-secondary-custom"></i> +1 (555) 123-4567</li>
+                        <li><i class="bi bi-envelope me-2 text-secondary-custom"></i> support@toolrent.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4 border-secondary opacity-25" />
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 opacity-75 small">© 2026 ToolRent Local Hardware Rental Service. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <button class="btn btn-sm btn-outline-secondary rounded-circle"
+                        onclick="window.scrollTo({top: 0, behavior: 'smooth'});"><i class="bi bi-arrow-up"></i></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
