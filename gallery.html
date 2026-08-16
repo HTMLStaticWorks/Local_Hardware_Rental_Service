@@ -8,12 +8,13 @@
     <title>ToolRent | Visual Gallery</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
     <style>
         /* Section 1: Hero */
         .gallery-hero {
-            height: 40vh;
+            height: 65vh;
+            min-height: 450px;
             background: linear-gradient(rgba(0, 18, 32, 0.6), rgba(0, 18, 32, 1)), url('https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -166,8 +167,8 @@
                 <a class="nav-link" href="contact.html">Contact</a>
             </nav>
             <div class="controls">
-                <button class="theme-btn" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
-                <button class="rtl-btn" id="rtl-toggle"><i class="bi bi-arrow-left-right"></i></button>
+                <button class="theme-btn header-controls-btn theme-toggle" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
+                <button class="rtl-btn header-controls-btn rtl-toggle" id="rtl-toggle"><i class="bi bi-arrow-left-right"></i></button>
                 <a class="btn-primary-custom rounded-pill px-4 py-2 text-decoration-none fw-bold text-white header-auth-btn"
                     href="signup.html">Sign Up</a>
                 <button class="btn btn-outline-secondary mobile-toggle-btn ms-2" data-bs-target="#mobileMenu"
@@ -192,6 +193,10 @@
                 <a class="text-decoration-none" href="pricing.html" style="color: var(--text-color)">Pricing</a>
                 <a class="text-decoration-none" href="contact.html" style="color: var(--text-color)">Contact</a>
                 <a class="btn-primary-custom text-center mt-4" href="login.html">Login</a>
+                <div class="mobile-toggles mt-auto pt-4 border-top border-secondary d-flex justify-content-center gap-3">
+                    <button class="theme-btn theme-toggle btn btn-outline-secondary rounded-circle" style="width: 50px; height: 50px;"><i class="bi bi-sun-fill"></i></button>
+                    <button class="rtl-btn rtl-toggle btn btn-outline-secondary rounded-circle" style="width: 50px; height: 50px;"><i class="bi bi-arrow-left-right"></i></button>
+                </div>
             </div>
         </div>
     </div>
@@ -212,10 +217,10 @@
                 <h2 class="display-6 fw-bold gallery-title reveal-fade-right">Power & Hand Tools</h2>
             </div>
             <div class="grid-tools reveal-fade-up">
-                <img alt="tools" src="https://images.pexels.com/photos/2091374/pexels-photo-2091374.jpeg" />
-                <img alt="tools" src="https://images.pexels.com/photos/7186211/pexels-photo-7186211.jpeg" />
-                <img alt="tools" src="https://images.pexels.com/photos/8005391/pexels-photo-8005391.jpeg" />
-                <img alt="tools" src="https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg" />
+                <img alt="tools" src="https://img.magnific.com/free-vector/hand-drawn-diy-pattern-background_23-2150849919.jpg" />
+                <img alt="tools" src="https://img.magnific.com/free-photo/top-view-mechanical-tools-arrangement_23-2149552380.jpg?semt=ais_test_b&w=740&q=80" />
+                <img alt="tools" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv2TqqnQSDXftZTKcjiE1-n_oNhTERSQaVxmCRfEsNPg&s=10" />
+                <img alt="tools" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn3pK6pgCpl7eYHoNAgc8334-ck4E5eVGaFuFrGdDryqS0sE6slkrDM1ZN&s=10" />
             </div>
         </div>
     </section>
@@ -224,10 +229,10 @@
         <div class="container py-4 text-center">
             <h2 class="display-6 fw-bold text-white gallery-title reveal-fade-left">Scaffoldings & Ladders</h2>
             <div class="hex-gallery reveal-zoom-in">
-                <div class="hex-item"><img alt="tool" src="https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg" /></div>
-                <div class="hex-item"><img alt="tool" src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" /></div>
-                <div class="hex-item"><img alt="tool" src="https://images.pexels.com/photos/1590067/pexels-photo-1590067.jpeg" /></div>
-                <div class="hex-item"><img alt="tool" src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg" /></div>
+                <div class="hex-item"><img alt="tool" src="https://static.vecteezy.com/system/resources/thumbnails/073/972/905/small/an-organized-array-of-assorted-tools-including-wrenches-a-screwdriver-and-various-screws-on-a-neutral-background-photo.jpeg" /></div>
+                <div class="hex-item"><img alt="tool" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4oUfxGUTxQRzF0Qq8jSVx5p94VlI4kmtams56ZCoTs4qgU2TET32DR-cj&s=10" /></div>
+                <div class="hex-item"><img alt="tool" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVQLTZ15VzdusfatEr9GP8sLg3E5RsZkAIa3dhiTXwOgfrWJ748zJa_766&s=10" /></div>
+                <div class="hex-item"><img alt="tool" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSmDCHrpQJafqpw6kU5rB0RmcEERbF71NVcVhoxYU6GSx61k0z00ySTkwp&s=10" /></div>
             </div>
         </div>
     </section>
@@ -240,7 +245,7 @@
             <div class="row g-4 reveal-fade-up">
                 <div class="col-md-6">
                     <div class="setup-card">
-                        <img alt="Install" src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" />
+                        <img alt="Install" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB3HPz7Vp5Hnu1mkEHu-zaqbXGI96G2s98F96PM4Xd5Q&s=10" />
                         <div class="setup-overlay">
                             <h4 class="text-white mb-0 fw-bold">Jobsite Inverter Generator Setup</h4>
                         </div>
@@ -248,7 +253,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="setup-card">
-                        <img alt="Install" src="https://images.pexels.com/photos/1750212/pexels-photo-1750212.jpeg" />
+                        <img alt="Install" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmuBzMjBcmu1IxKg4hCvi86Q9Ws-kEfopKj_wR2fe1Kw&s" />
                         <div class="setup-overlay">
                             <h4 class="text-white mb-0 fw-bold">Mobile Scaffolding Tower Setup</h4>
                         </div>

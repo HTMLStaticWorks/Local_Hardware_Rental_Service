@@ -8,7 +8,7 @@
     <title>ToolRent | tool fleet Store Layout 2</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
     <style>
         /* Home 2 Specific Styles */
@@ -91,8 +91,8 @@
         }
 
         .flip-img {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
@@ -315,6 +315,7 @@
             background: var(--color-secondary);
             border-radius: 50%;
             opacity: 0.3;
+            pointer-events: none;
         }
 
         /* RTL Styles for Timeline */
@@ -357,6 +358,16 @@
             background: var(--color-secondary);
             border-radius: 50%;
             opacity: 0.3;
+            pointer-events: none;
+        }
+        .particles-cta .btn {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        .particles-cta .btn:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.4) !important;
+            background-color: var(--color-secondary) !important;
+            color: var(--color-primary) !important;
         }
     </style>
 </head>
@@ -381,8 +392,8 @@
                 <a class="nav-link" href="contact.html">Contact</a>
             </nav>
             <div class="controls">
-                <button class="theme-btn" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
-                <button class="rtl-btn" id="rtl-toggle"><i class="bi bi-arrow-left-right"></i></button>
+                <button class="theme-btn header-controls-btn theme-toggle" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
+                <button class="rtl-btn header-controls-btn rtl-toggle" id="rtl-toggle"><i class="bi bi-arrow-left-right"></i></button>
                 <a class="btn-primary-custom rounded-pill px-4 py-2 text-decoration-none fw-bold text-white header-auth-btn"
                     href="signup.html">Sign Up</a>
                 <button class="btn btn-outline-secondary mobile-toggle-btn ms-2" data-bs-target="#mobileMenu"
@@ -407,6 +418,10 @@
                 <a class="text-decoration-none" href="pricing.html" style="color: var(--text-color)">Pricing</a>
                 <a class="text-decoration-none" href="contact.html" style="color: var(--text-color)">Contact</a>
                 <a class="btn-primary-custom text-center mt-4" href="login.html">Login</a>
+                <div class="mobile-toggles mt-auto pt-4 border-top border-secondary d-flex justify-content-center gap-3">
+                    <button class="theme-btn theme-toggle btn btn-outline-secondary rounded-circle" style="width: 50px; height: 50px;"><i class="bi bi-sun-fill"></i></button>
+                    <button class="rtl-btn rtl-toggle btn btn-outline-secondary rounded-circle" style="width: 50px; height: 50px;"><i class="bi bi-arrow-left-right"></i></button>
+                </div>
             </div>
         </div>
     </div>
@@ -435,7 +450,7 @@
                     <div class="flip-card-container">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img alt="Power Drills" class="flip-img" src="https://images.pexels.com/photos/2091374/pexels-photo-2091374.jpeg" />
+                                <img alt="Power Drills" class="flip-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF4CJcP3-j8kcqew4tSACP_2ivND-dVlOaicw3F29eAQ&s" />
                                 <h4 class="fw-bold">Power Drills</h4>
                                 <p class="text-muted small">Hover to see rental duration options</p>
                             </div>
@@ -455,7 +470,7 @@
                     <div class="flip-card-container">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img alt="Extension Ladder" class="flip-img" src="https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg" />
+                                <img alt="Extension Ladder" class="flip-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAtRdIefi0Aet9MwPx5SgSQutsyRg_t77x6vZi0l2nVN3AKeaEY_wkxnTl&s=10" />
                                 <h4 class="fw-bold">Extension Ladders</h4>
                                 <p class="text-muted small">Hover to see rental duration options</p>
                             </div>
@@ -475,7 +490,7 @@
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <img alt="Rotary Hammer Drill" class="flip-img"
-                                    src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" />
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUXdcTEfhjWPfXUoRcXartEDIgkZBMeeWWicAWQNbK-k6Uc_37lCJ30eGr&s=10" />
                                 <h4 class="fw-bold">Silent Generators</h4>
                                 <p class="text-muted small">Hover to see rental duration options</p>
                             </div>
@@ -503,7 +518,7 @@
             <h2 class="display-5 fw-bold mb-5 text-center reveal-fade-up">Our <span class="text-accent-custom">Premium</span> Fleet</h2>
             <div class="bento-grid reveal-zoom-in">
                 <div class="bento-item bento-large">
-                    <img alt="Core Drill" src="https://images.pexels.com/photos/2091374/pexels-photo-2091374.jpeg" />
+                    <img alt="Core Drill" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMy3gK-zc1ru-2RuiEavWnw55hqUZGXg7_KauEgSISzA&s" />
                     <div class="bento-content">
                         <span class="badge bg-danger mb-2">Heavy Duty</span>
                         <h3>Heavy Rotary Hammer Drill</h3>
@@ -511,13 +526,13 @@
                     </div>
                 </div>
                 <div class="bento-item">
-                    <img alt="Fiberglass Ladder" src="https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg" />
+                    <img alt="Fiberglass Ladder" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPBLWk5fezjGnOpu-F4ixvAxbywUEIPaGBG1wnKmvJPA&s=10" />
                     <div class="bento-content">
                         <h5>Aluminum Step Ladder</h5>
                     </div>
                 </div>
                 <div class="bento-item">
-                    <img alt="Industrial Generator" src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" />
+                    <img alt="Industrial Generator" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStjTWqLLwa40ik1hdFAw89vVpqDRx2T_BMcb3rVkBT9z_629IqIUWyWpB6&s=10" />
                     <div class="bento-content">
                         <h5>Silent Portable Generator</h5>
                     </div>
@@ -541,16 +556,16 @@
             </div>
             <div class="gallery-track reveal-fade-up">
                 <div class="gallery-item">
-                    <img alt="Scaffolding Setup" src="https://images.pexels.com/photos/1750212/pexels-photo-1750212.jpeg" />
+                    <img alt="Scaffolding Setup" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsA7Sp4f8FsrNJrnXLgNaUyNRPhK40-mYbEaeTF15H22gp-qTNa4MbGU4x&s=10" />
                 </div>
                 <div class="gallery-item">
-                    <img alt="Ladder Setup" src="https://images.pexels.com/photos/4792521/pexels-photo-4792521.jpeg" />
+                    <img alt="Ladder Setup" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvqJdeLcGZw9ZhzxTpCA73iG0_DYjqMY3_Vk-1mF_t1g0qFpNRV39gUyMh&s=10" />
                 </div>
                 <div class="gallery-item">
-                    <img alt="Hammer Drill" src="https://images.pexels.com/photos/2091374/pexels-photo-2091374.jpeg" />
+                    <img alt="Hammer Drill" src="https://img.magnific.com/free-photo/top-view-mechanical-tools-arrangement_23-2149552380.jpg?semt=ais_test_b&w=740&q=80" />
                 </div>
                 <div class="gallery-item">
-                    <img alt="Generator Setup" src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" />
+                    <img alt="Generator Setup" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg5nRrWsBGH2LDNHpqqRl8Mr5SbVWb5wZGq-L3L5hizBddjENJOVvNz8g&s=10" />
                 </div>
             </div>
         </div>
