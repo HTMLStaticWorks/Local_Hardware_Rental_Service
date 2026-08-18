@@ -350,6 +350,70 @@ textarea::placeholder {
   margin-right: 0 !important;
 }
 
+/* RTL Spacing Utilities */
+[dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-5 { margin-left: 3rem !important; margin-right: 0 !important; }
+
+[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-5 { margin-right: 3rem !important; margin-left: 0 !important; }
+
+[dir="rtl"] .pe-1 { padding-left: 0.25rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-2 { padding-left: 0.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-3 { padding-left: 1rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-4 { padding-left: 1.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-5 { padding-left: 3rem !important; padding-right: 0 !important; }
+
+[dir="rtl"] .ps-1 { padding-right: 0.25rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-2 { padding-right: 0.5rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-3 { padding-right: 1rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-4 { padding-right: 1.5rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-5 { padding-right: 3rem !important; padding-left: 0 !important; }
+
+@media (min-width: 992px) {
+  [dir="rtl"] .pe-lg-5 {
+    padding-left: 3rem !important;
+    padding-right: calc(var(--bs-gutter-x) * .5) !important;
+  }
+  [dir="rtl"] .ps-lg-5 {
+    padding-right: 3rem !important;
+    padding-left: calc(var(--bs-gutter-x) * .5) !important;
+  }
+}
+
+/* RTL Footer Alignment */
+[dir="rtl"] .footer {
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer h3,
+[dir="rtl"] .footer h5 {
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer p {
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer ul {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+[dir="rtl"] .footer ul li {
+  unicode-bidi: plaintext;
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer .d-flex.gap-3 {
+  justify-content: flex-start;
+}
+
 /* RTL Form and Contact Fixes */
 [dir="rtl"] input, 
 [dir="rtl"] textarea {
@@ -360,11 +424,6 @@ textarea::placeholder {
 [dir="rtl"] .password-toggle {
   right: auto;
   left: 15px;
-}
-
-[dir="rtl"] .footer ul li {
-  unicode-bidi: plaintext;
-  text-align: right;
 }
 
 [dir="rtl"] .contact-box p {
