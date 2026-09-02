@@ -80,6 +80,45 @@
         }
         .highlight .feature-list i { color: #00ADB5; }
 
+/* Section: Add-on Services Cards */
+        .alacarte-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 35px 25px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .alacarte-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-secondary);
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.2);
+        }
+        .alacarte-card .card-title-box {
+            min-height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        .alacarte-card p {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .alacarte-card .price-tag {
+            margin-top: auto;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+        }
+
         /* Section 5: FAQ Accordion */
         .accordion-button { background-color: var(--card-bg); color: var(--text-color) !important; }
         .accordion-button:not(.collapsed) { background-color: rgba(0, 173, 181, 0.1) !important; color: var(--color-secondary) !important; box-shadow: none; }
@@ -207,38 +246,47 @@
 <!-- Section: Add-on Services -->
 <section class="py-5 bg-opacity-10" style="background-color: rgba(0, 173, 181, 0.05);">
 <div class="container py-5 text-center">
-<h2 class="display-6 fw-bold mb-5 reveal-fade-up">À La Carte <span class="text-accent-custom">Rates</span></h2>
+<h2 class="display-6 fw-bold mb-2 reveal-fade-up">À La Carte <span class="text-secondary-custom">Services &amp; Rates</span></h2>
+<p class="text-muted mb-5 reveal-fade-up">Flexible add-on options to complement your hardware rental package.</p>
 <div class="row g-4 justify-content-center reveal-zoom-in">
 <div class="col-lg-3 col-md-6">
-<div class="p-4 bg-dark rounded-4 h-100 border border-secondary border-opacity-25 transition-transform hover-scale" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-10px)'" style="transition: transform 0.3s;">
+<div class="alacarte-card">
 <i class="bi bi-tools display-4 text-secondary-custom mb-3"></i>
-<h4 class="fw-bold text-white">Scaffolding Setup</h4>
-<p class="text-white opacity-75 small">Our specialists will deliver, erect, and safety-certify scaffolding towers on site.</p>
-<h5 class="text-white fw-bold mb-0">From $99/setup</h5>
+<div class="card-title-box">
+<h4 class="fw-bold mb-0">Scaffolding Setup</h4>
+</div>
+<p class="opacity-75 small">Our specialists will deliver, erect, and safety-certify scaffolding towers on site.</p>
+<h5 class="price-tag">From $99/setup</h5>
 </div>
 </div>
 <div class="col-lg-3 col-md-6">
-<div class="p-4 bg-dark rounded-4 h-100 border border-secondary border-opacity-25 transition-transform hover-scale" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-10px)'" style="transition: transform 0.3s;">
-<i class="bi bi-shield-plus display-4 text-secondary-custom mb-3"></i>
-<h4 class="fw-bold text-white">Jobsite Delivery</h4>
-<p class="text-white opacity-75 small">Prompt delivery of heavy machinery, concrete mixers, and scaffolding to your site.</p>
-<h5 class="text-white fw-bold mb-0">From $49/trip</h5>
+<div class="alacarte-card">
+<i class="bi bi-truck display-4 text-secondary-custom mb-3"></i>
+<div class="card-title-box">
+<h4 class="fw-bold mb-0">Jobsite Delivery</h4>
+</div>
+<p class="opacity-75 small">Prompt delivery of heavy machinery, concrete mixers, and scaffolding to your site.</p>
+<h5 class="price-tag">From $49/trip</h5>
 </div>
 </div>
 <div class="col-lg-3 col-md-6">
-<div class="p-4 bg-dark rounded-4 h-100 border border-secondary border-opacity-25 transition-transform hover-scale" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-10px)'" style="transition: transform 0.3s;">
-<i class="bi bi-info-circle display-4 text-secondary-custom mb-3"></i>
-<h4 class="fw-bold text-white">Equipment Demo</h4>
-<p class="text-white opacity-75 small">On-site safety demonstration and user instruction for all rented heavy machinery.</p>
-<h5 class="text-white fw-bold mb-0">Free with rental</h5>
+<div class="alacarte-card">
+<i class="bi bi-patch-check display-4 text-secondary-custom mb-3"></i>
+<div class="card-title-box">
+<h4 class="fw-bold mb-0">Equipment Demo</h4>
+</div>
+<p class="opacity-75 small">On-site safety demonstration and user instruction for all rented heavy machinery.</p>
+<h5 class="price-tag">Free with rental</h5>
 </div>
 </div>
 <div class="col-lg-3 col-md-6">
-<div class="p-4 bg-dark rounded-4 h-100 border border-secondary border-opacity-25 transition-transform hover-scale" onmouseout="this.style.transform='translateY(0)'" onmouseover="this.style.transform='translateY(-10px)'" style="transition: transform 0.3s;">
+<div class="alacarte-card">
 <i class="bi bi-person-gear display-4 text-secondary-custom mb-3"></i>
-<h4 class="fw-bold text-white">Operator Assistance</h4>
-<p class="text-white opacity-75 small">Hire an experienced operator to assist with heavy drilling or concrete mixing.</p>
-<h5 class="text-white fw-bold mb-0">$75/hour</h5>
+<div class="card-title-box">
+<h4 class="fw-bold mb-0">Operator Assistance</h4>
+</div>
+<p class="opacity-75 small">Hire an experienced operator to assist with heavy drilling or concrete mixing.</p>
+<h5 class="price-tag">$75/hour</h5>
 </div>
 </div>
 </div>
