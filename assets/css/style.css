@@ -60,6 +60,18 @@ img, video {
   color: #fff !important;
 }
 
+.btn-outline-secondary {
+  color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--color-secondary) !important;
+  color: #ffffff !important;
+  border-color: var(--color-secondary) !important;
+}
+
 [data-theme="dark"] .btn-outline-secondary {
   color: #eaeaea !important;
   border-color: rgba(234, 234, 234, 0.5) !important;
@@ -68,7 +80,10 @@ img, video {
 [data-theme="dark"] .btn-outline-secondary:hover {
   background-color: #eaeaea !important;
   color: #001220 !important;
-}[data-theme="dark"] .btn-close {
+  border-color: #eaeaea !important;
+}
+
+[data-theme="dark"] .btn-close {
   filter: invert(1) !important;
 }
 
@@ -106,7 +121,7 @@ textarea::placeholder {
 
 /* Base Components */
 .btn-primary-custom {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background-color: var(--color-secondary);
   color: #fff;
   border: none;
   padding: 12px 28px;
@@ -116,12 +131,13 @@ textarea::placeholder {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 .btn-primary-custom:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 173, 181, 0.3);
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.4);
   color: #fff;
+  background-color: var(--color-secondary);
 }
 
 .btn-accent-custom {
@@ -137,6 +153,16 @@ textarea::placeholder {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
   color: #fff;
+}
+
+.brand-logo-img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.logo:hover .brand-logo-img {
+  transform: scale(1.08) rotate(5deg);
 }
 
 /* Header & Nav */

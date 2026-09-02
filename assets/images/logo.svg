@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="36" height="36" fill="none">
+  <defs>
+    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#f59e0b" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Industrial Hexagon Badge -->
+  <polygon points="50,5 88,27 88,73 50,95 12,73 12,27" fill="url(#logo-grad)" filter="url(#logo-shadow)" />
+  <polygon points="50,11 82,29 82,71 50,89 18,71 18,29" fill="#12151c" opacity="0.95" />
+  
+  <!-- Crossed Hammer & Wrench Hardware Icons -->
+  <g fill="url(#logo-grad)">
+    <!-- Hammer -->
+    <path d="M38,32 L46,24 C48,22 52,22 54,24 L60,30 L54,36 L48,30 L34,68 C33,70 30,70 28,68 L26,66 C24,64 24,61 26,60 L38,32 Z" />
+    <!-- Wrench Head & Handle -->
+    <path d="M68,34 C64,30 58,32 54,36 L30,60 C28,62 28,65 30,67 L33,70 C35,72 38,72 40,70 L64,46 C68,42 70,36 68,34 Z M60,40 L56,36 C58,34 62,34 64,36 C66,38 66,42 64,44 L60,40 Z" />
+    <!-- Center Hardware Bolt/Gear Detail -->
+    <circle cx="50" cy="50" r="5" fill="#f59e0b" />
+  </g>
+</svg>
